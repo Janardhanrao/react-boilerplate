@@ -18,6 +18,11 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
     return (
       <h1>
         <FormattedMessage {...messages.header} />
+	    <img
+	      draggable={false}
+	      className="img-responsive vcenter logo"
+	      src={'/images/ae_logo.png'}
+	      />
       </h1>
     );
   }

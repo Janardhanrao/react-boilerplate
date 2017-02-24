@@ -7,6 +7,7 @@ const fs = require('fs');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CircularDependencyPlugin = require('circular-dependency-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const logger = require('../../server/logger');
 const cheerio = require('cheerio');
 const pkg = require(path.resolve(process.cwd(), 'package.json'));
@@ -23,6 +24,7 @@ const plugins = [
     exclude: /a\.js|node_modules/, // exclude node_modules
     failOnError: false, // show a warning when there is a circular dependency
   }),
+  new CopyWebpackPlugin([{ from: 'static' }]),
 ];
 
 module.exports = require('./webpack.base.babel')({
@@ -48,7 +50,9 @@ module.exports = require('./webpack.base.babel')({
     // locally linked packages. This is an issue with babel and webpack.
     // See https://github.com/babel/babel-loader/issues/149 and
     // https://github.com/webpack/webpack/issues/1866
-    presets: ['babel-preset-react-hmre'].map(require.resolve),
+    cacheDirectory: true,
+    plugins: ['transform-decorators-legacy', 'transform-runtime'],
+    presets: ['es2015', 'react', 'stage-0','babel-preset-react-hmre'],
   },
 
   // Emit a source map for easier debugging

@@ -1,0 +1,317 @@
+@import "../button.less";
+@import "../colors.less";
+@import '../mixins.less';
+
+.login-or
+{
+  font-size: 18px;
+
+  position: relative;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  color: #aaa;
+}
+
+.span-or{
+  position: absolute;
+  top: -2px;
+  left: 50%;
+
+  display: block;
+
+  width: 50px;
+  margin-left: -25px;
+
+  text-align: center;
+
+  background-color: #fff;
+}
+
+.hr-or{
+  height: 1px;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  background-color: #cdcdcd;
+}
+
+.login-view{
+  .block-align-vertical;
+  position: absolute;
+  width: 410px;
+  height: 467px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px 0 rgba(58, 58, 58, 0.5);
+  .header-strip{
+    min-height: 52px;
+    height: 162px;
+    background: #45c9f9;
+    background: -webkit-linear-gradient(left, #17b0f7 ,#45c9f9); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #17b0f7, #45c9f9); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #17b0f7, #45c9f9); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #17b0f7 ,#45c9f9); /* Standard syntax */
+    width: 100%;
+    z-index: @zIndex-1;
+    .app-title{
+      .text-align-vertical;
+      .logo{
+        height: 30px;
+      }
+      h4{
+        padding-left: 15px;
+        font-family: @OpenSans;
+        font-size: 20px;
+        font-weight: normal;
+        font-style: italic;
+        font-stretch: normal;
+        color: #ffffff;
+      }
+    }
+  }
+  .send-button{
+    position: absolute;
+    bottom: -31px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    width: 62px;
+    height: 62px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 5px 7px 0 rgba(37, 53, 84, 0.5);
+    .send-icon{
+      .block-align-vertical;
+      height: 20px;
+      object-fit: contain;
+    }
+    &.login-progress{
+      background-color: rgb(120, 127, 136);
+      cursor: not-allowed;
+    }
+  }
+}
+
+div.login-wrapper{
+  min-height: 100vh;
+  background: url('../../static/images/login-background.png');
+  background-size: contain;
+  background-color: rgba(0,0,0,0.3)
+
+}
+
+.login-container{
+  .panel{
+    border-radius: 2px;
+    background: @light-grey;
+  }
+  input{
+    margin-top: 20px;
+    .custom-input-text;
+  }
+  .custom-square-button(@cyan, @topic-color);
+  z-index: 100;
+  h2{
+    margin-top: -60px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-size: 28px;
+  }
+  #mobile-number{
+      margin-bottom: 20px;
+  }
+  #resend-otp{
+      cursor: pointer;
+      text-decoration: none;
+  }
+  .panel-body{
+    padding: 60px;
+  }
+}
+
+.login-view{
+  .login-button{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+  }
+}
+
+.login-view{
+  .login-mode{
+    border-top: solid 3px #2367c6;
+    padding: 12px 5px;
+    margin-bottom: 30px;
+    display: inline-block;
+    cursor: pointer;
+    font-family: @Montserrat;
+    height: 40px;
+    font-size: 15px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    color: #2367c6;
+  }
+
+  .active{
+    // border-top: solid 3px #2367c6;
+    color: #2367c6;
+  }
+
+  input{
+    width: 300px;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    padding: 0 2px;
+    border-bottom: solid 1px #bfcaeb;
+  }
+
+  .form-control[disabled]{
+    background-color: white;
+  }
+  input:focus{
+    border: none;
+    box-shadow: none;
+  }
+  input[type='checkbox'] {
+    width: 0px;
+    height: 0px;
+    padding: 0px;
+  }
+}
+
+.login-view{
+  .app-title{
+    display: inline-block;
+
+  }
+}
+
+
+@media screen and (max-height: 575px){
+  #rc-imageselect,.g-recaptcha{
+    transform:scale(0.77) !important;
+    -webkit-transform:scale(0.77) !important;
+    transform-origin:0 0 !important;
+    -webkit-transform-origin:0 0 !important;
+  }
+}
+
+
+.group {
+  position:relative;
+  margin-bottom:45px;
+  input {
+    font-size:15px;
+    padding:10px 10px 10px 5px;
+    display:block;
+    width:300px;
+    border:none;
+    border-bottom:1px solid #757575;
+  }
+  input:focus {
+    outline:none;
+  }
+
+  /* LABEL ======================================= */
+  label 				 {
+    font-family: @OpenSans;
+    font-size: 13px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    color: #667282;
+    position:absolute;
+    pointer-events:none;
+    left:2px;
+    top:10px;
+    transition:0.2s ease all;
+    -moz-transition:0.2s ease all;
+    -webkit-transition:0.2s ease all;
+  }
+
+  /* active state */
+   input:focus ~ label, input:valid ~ label 		{
+    top:-20px;
+    font-size:13px;
+    color:#388cec;
+  }
+  input:disabled{
+    color:rgb(120, 127, 136);
+  }
+
+  input:disabled ~ label{
+    top:-20px;
+    color:rgb(120, 127, 136);
+  }
+
+  i.fa-eye, i.fa-eye-slash {
+    position: absolute;
+    right: 6px;
+    top: 15px;
+    cursor: pointer;    
+  }  
+
+  /* BOTTOM BARS ================================= */
+  .bar 	{ position:relative; display:block; width:300px; }
+  .bar:before, .bar:after 	{
+    content:'';
+    height:1px;
+    width:0;
+    bottom:1px;
+    position:absolute;
+    background:#9ba6c8;
+    transition:0.2s ease all;
+    -moz-transition:0.2s ease all;
+    -webkit-transition:0.2s ease all;
+  }
+  .bar:before {
+    left:50%;
+  }
+  .bar:after {
+    right:50%;
+  }
+
+  /* active state */
+  input:focus ~ .bar:before, input:focus ~ .bar:after {
+    width:50%;
+  }
+
+  /* HIGHLIGHTER ================================== */
+  .highlight {
+    position:absolute;
+    height:60%;
+    width:100px;
+    top:25%;
+    left:0;
+    pointer-events:none;
+    opacity:0.5;
+  }
+
+  // /* active state */
+  // input:focus ~ .highlight {
+  //   -webkit-animation:inputHighlighter 0.3s ease;
+  //   -moz-animation:inputHighlighter 0.3s ease;
+  //   animation:inputHighlighter 0.3s ease;
+  // }
+
+  /* ANIMATIONS ================ */
+  // @-webkit-keyframes inputHighlighter {
+  // 	from { background:#9ba6c8; }
+  //   to 	{ width:0; background:transparent; }
+  // }
+  // @-moz-keyframes inputHighlighter {
+  // 	from { background:#9ba6c8; }
+  //   to 	{ width:0; background:transparent; }
+  // }
+  // @keyframes inputHighlighter {
+  // 	from { background:#9ba6c8; }
+  //   to 	{ width:0; background:transparent; }
+  // }
+
+}
