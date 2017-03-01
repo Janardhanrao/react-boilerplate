@@ -156,6 +156,10 @@
       "require-yield": 0,
       "import/no-webpack-loader-syntax": 0
     },
+    "semi": [
+      2,
+      "never",
+    ],
     "settings": {
       "import/resolver": {
         "webpack": {
