@@ -160,7 +160,7 @@
     },
     "semi": [
       2,
-      "never",
+      "never"
     ],
     "settings": {
       "import/resolver": {
